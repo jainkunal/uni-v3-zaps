@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState, useCallback } from "react";
 import { WidoWidget } from "wido-widget";
@@ -29,11 +28,11 @@ function App() {
   const [ethProvider, setEthProvider] = useState();
   const [lowerTick, lowerTickInput] = useInput({
     type: "number",
-    defaultVal: -24000,
+    defaultVal: 73020,
   });
   const [upperTick, upperTickInput] = useInput({
     type: "number",
-    defaultVal: -23000,
+    defaultVal: 76920,
   });
 
   // useLocalApi();
@@ -62,7 +61,7 @@ function App() {
   useEffect(() => {
     setFromTokens(fromTokens);
     getSupportedTokens({
-      chainId: [42161],
+      chainId: [137, 42161],
       protocol: ["dex", "yearn.finance"],
     }).then(setFromTokens);
     getSupportedTokens({ chainId: [42161], protocol: ["uni-v3"] }).then(
