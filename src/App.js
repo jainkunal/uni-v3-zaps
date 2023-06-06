@@ -61,7 +61,7 @@ function App() {
   useEffect(() => {
     setFromTokens(fromTokens);
     getSupportedTokens({
-      chainId: [137, 42161],
+      chainId: [1, 10, 137, 250, 42161],
       protocol: ["dex", "yearn.finance"],
     }).then(setFromTokens);
     getSupportedTokens({ chainId: [42161], protocol: ["uni-v3"] }).then(
